@@ -37,8 +37,8 @@ Example:
 ```shell
 docker run --rm --interactive --tty busybox-java:jre8
 ```
-TODO: How to use the Makefile
-TODO: Add link to an example downstream image using this base.
+TODO: How to use the Makefile.<br>
+TODO: Add link to an example downstream image using this base.<br>
 
 ### License
 MIT for the Dockerfiles and docs.
