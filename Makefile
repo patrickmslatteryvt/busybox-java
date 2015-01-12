@@ -1,24 +1,26 @@
+USER = registry.mywebgrocer.com/mywebgrocer
+
 all: build test push
 
 clean:
-	@docker rmi registry.mywebgrocer.com/mywebgrocer/busybox-java:jre7
-	@docker rmi registry.mywebgrocer.com/mywebgrocer/busybox-java:jdk7
-	@docker rmi registry.mywebgrocer.com/mywebgrocer/busybox-java:jre8
-	@docker rmi registry.mywebgrocer.com/mywebgrocer/busybox-java:jdk8
+	@docker rmi $(USER)/busybox-java:jre7
+	@docker rmi $(USER)/busybox-java:jdk7
+	@docker rmi $(USER)/busybox-java:jre8
+	@docker rmi $(USER)/busybox-java:jdk8
 	
 build:
 	@docker \
 		build \
-		--tag=registry.mywebgrocer.com/mywebgrocer/busybox-java:jre7 ./jre7/
+		--tag=$(USER)/busybox-java:jre7 ./jre7/
 	@docker \
 		build \
-		--tag=registry.mywebgrocer.com/mywebgrocer/busybox-java:jdk7 ./jdk7/
+		--tag=$(USER)/busybox-java:jdk7 ./jdk7/
 	@docker \
 		build \
-		--tag=registry.mywebgrocer.com/mywebgrocer/busybox-java:jre8 ./jre8/
+		--tag=$(USER)/busybox-java:jre8 ./jre8/
 	@docker \
 		build \
-		--tag=registry.mywebgrocer.com/mywebgrocer/busybox-java:jdk8 ./jdk8/
+		--tag=$(USER)/busybox-java:jdk8 ./jdk8/
 
 test:
 	@docker \
@@ -26,27 +28,27 @@ test:
 		--rm \
 		--interactive \
 		--tty \
-		registry.mywebgrocer.com/mywebgrocer/busybox-java:jre7
+		$(USER)/busybox-java:jre7
 	@docker \
 		run \
 		--rm \
 		--interactive \
 		--tty \
-		registry.mywebgrocer.com/mywebgrocer/busybox-java:jdk7
+		$(USER)/busybox-java:jdk7
 	@docker \
 		run \
 		--rm \
 		--interactive \
 		--tty \
-		registry.mywebgrocer.com/mywebgrocer/busybox-java:jre8
+		$(USER)/busybox-java:jre8
 	@docker \
 		run \
 		--rm \
 		--interactive \
 		--tty \
-		registry.mywebgrocer.com/mywebgrocer/busybox-java:jdk8
+		$(USER)/busybox-java:jdk8
 
 push:
 	@docker \
 		push \
-		registry.mywebgrocer.com/mywebgrocer/busybox-java
+		$(USER)/busybox-java
