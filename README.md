@@ -42,7 +42,7 @@ TODO: Add link to an example downstream image using this base.
 ### License
 MIT for the Dockerfiles and docs.
 
-By using any of these Dockerfiles or any derived containers you are accepting the terms of [Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX][4].
+By using any of these Dockerfiles or any derived containers you are accepting the terms of the [Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX][4].
   [1]: https://www.docker.com/
   [2]: https://www.java.com/
   [3]: http://www.busybox.net/
